@@ -137,7 +137,13 @@
 
       if (!name || !marks || !category || !gender) return;
 
-      await db.collection("bcom_students").add({ name, marks, category, gender });
+      db.collection("bcom_students").add({ 
+  name, 
+  marks, 
+  category, 
+  gender,
+  approved: false
+});
       form.reset();
     });
 

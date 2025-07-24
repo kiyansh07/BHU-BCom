@@ -148,7 +148,7 @@
 
   // Real-time leaderboard (no approved filter)
   function startRealTimeLeaderboard() {
-    let query = db.collection("bcom_students");
+    let query = db.collection("bcom_students").where("approved", "==", true);
 
     if (filterCategory.value) {
       query = query.where("category", "==", filterCategory.value);
